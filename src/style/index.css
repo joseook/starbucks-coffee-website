@@ -4,11 +4,20 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+
 .navbar-container {
-    box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
-    -webkit-box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
-    -moz-box-shadow: 0px 4px 5px 0px rgba(191, 122, 122, 0.71);
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 5px 0px rgba(0, 128, 0, 0.71);
+    background-color: #00aaff;
+    height: 80px;
+    transition: top 0.3s ease-in-out; 
 }
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -150,6 +159,28 @@ body {
     text-align: center;
 }
 
+.back-to-top {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #00754a;
+    color: white; 
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top:focus {
+    outline: none;
+}
+
+.content {
+    padding-top: 80px;
+}
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

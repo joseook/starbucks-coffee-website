@@ -41,18 +41,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.classList.add("active");
             }
         });
-    });
 
-    // New Functionality: Back to Top Button
-    const backToTopButton = document.querySelector(".back-to-top");
+        // Scroll-triggered Navbar
+        const navbarContainer = document.querySelector(".navbar-container");
+        const prevScrollPos = window.pageYOffset;
 
-    window.addEventListener("scroll", function() {
+        if (prevScrollPos > pageYOffset) {
+            navbarContainer.style.top = "0";
+        } else {
+            navbarContainer.style.top = "-50px";
+        }
+
+        // Back to Top Button
+        const backToTopButton = document.querySelector(".back-to-top");
+
         if (window.pageYOffset > 300) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
         }
     });
+
+    const backToTopButton = document.querySelector(".back-to-top");
 
     backToTopButton.addEventListener("click", function() {
         window.scrollTo({
